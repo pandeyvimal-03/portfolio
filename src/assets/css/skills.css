@@ -1,0 +1,170 @@
+/* Main carousel container */
+
+
+  /* ------------------------------------------------------------------------------------------ */
+
+  
+  
+  /* Carousel and animation css starts */
+  .rc-carousel {
+    --box-gap: 1.5rem;
+    --tile-size: 8rem;
+    width: 100%;
+    max-width: calc(
+      (var(--tile-size) + var(--box-gap)) * ((var(--tiles) / 2) - 6)
+    );
+    margin: var(--box-gap) auto;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+  }
+  .rc-carousel::before,
+  .rc-carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 5rem;
+    height: 100%;
+    background: linear-gradient(to right, #0b131a, rgba(11, 19, 26, 0));
+    
+    z-index: inherit;
+  }
+ 
+  .rc-carousel::after {
+    right: 0;
+    left: auto;
+    background: linear-gradient(to left, #0b131a, rgba(11, 19, 26, 0));
+  }
+  .rc-carousel-strip {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-animation: slideX 20s linear infinite;
+    animation: slideX 20s linear infinite;
+  }
+  .rc-carousel-strip.reverse {
+    /* reverse animation */
+    animation-direction: reverse;
+  }
+  .rc-carousel-strip:hover {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+  .rc-carousel-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    gap: var(--box-gap);
+  }
+  
+  .rc-carousel-item {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    width: var(--tile-size);
+    /* height: var(--tile-size); */
+    height: auto;
+  }
+  
+  .rc-carousel-item-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: center;
+    object-position: center;
+  }
+  
+ 
+  
+  @keyframes slideX {
+    100% {
+      
+      transform: translateX(0);
+    }
+    0% {
+      transform: translateX(
+        calc(-1 * (var(--tile-size) + var(--box-gap)) * (var(--tiles) / 2))
+      );
+    }
+  }
+  
+  /* Animation won't work if you preferes reduced motion */
+  @media (prefers-reduced-motion) {
+   
+    .rc-carousel::before,
+    .rc-carousel::after {
+      display: none;
+    }
+    .rc-carousel-box {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .rc-carousel-box [aria-hidden="true"] {
+      display: none;
+    }
+    .rc-carousel-strip {
+      animation: none;
+    }
+  }
+  
+  @media screen and (max-width: 640px) {
+    /* Carousel container adjustments for mobile */
+    .rc-carousel {
+      max-width: calc(
+        (var(--tile-size) + var(--box-gap)) * ((var(--tiles) / 2) - 10)
+      );
+      margin: var(--box-gap) auto;
+      overflow: hidden; /* Prevent content from spilling */
+      position: relative; /* Ensure gradients position relative to container */
+    }
+  
+    /* Adjust the gradient shades for mobile */
+    .rc-carousel::before,
+    .rc-carousel::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 4rem; /* Extend slightly to cover any gaps */
+      height: 100%;
+      background: linear-gradient(
+        to right,
+        rgba(11, 19, 26, 1),
+        rgba(11, 19, 26, 0)
+      );
+      z-index: 1;
+      pointer-events: none; /* Prevent interaction with the gradients */
+    }
+  
+    .rc-carousel::after {
+      right: -1rem; /* Extend slightly beyond the container edge */
+      left: auto;
+      background: linear-gradient(
+        to left,
+        rgba(11, 19, 26, 1),
+        rgba(11, 19, 26, 0)
+      );
+    }
+  
+    .rc-carousel::before {
+      left: -1rem; /* Extend slightly beyond the container edge */
+    }
+  
+    /* Box adjustments for mobile */
+    .rc-carousel-box {
+      gap: 1rem; /* Reduce gap for better alignment */
+    }
+  
+    /* Tile size adjustments */
+    .rc-carousel-item {
+      width: calc(var(--tile-size) - 1rem); /* Slightly reduce size */
+    }
+  
+    /* Optional: Adjust gradient animation for mobile */
+    .rc-carousel-strip {
+      animation-duration: 25s; /* Slightly slower for smaller screens */
+    }
+  }
+  
