@@ -1,7 +1,8 @@
+"use client"
 import React from 'react'
 
 function Education() {
-  let exp = [
+  const exp = [
     {
       course: "Master In Computer Application - MCA",
       clg: "Uttaranchal University",
@@ -27,7 +28,7 @@ function Education() {
         {
           exp.map((item, index) => {
             return (
-              <div className='step '>
+              <div className='step ' key={index}>
                 <div className='circle'>{index + 1}</div>
                 <div className='content text-white'>
                   <h2 className='text-2xl font-bold'>{item?.course}</h2>

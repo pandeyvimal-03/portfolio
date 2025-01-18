@@ -1,48 +1,49 @@
+"use client"
 import React, { useState } from 'react'
 import { isValidate } from '@/lib/utils';
-import { error } from 'console';
+import {  user } from '@/types/contact';
 
 function Contact() {
 
   
-    const [user , setUser] = useState({
+    const [user , setUser] = useState<user>({
             email : {name : 'email' , value : '' , error : '' , isRequired : true},
             name : {name : 'name' , value : '' , error : '' , isRequired : true},
             desc : {name : 'desc' , value : '' , error : '' , isRequired : true}
           })
 
-    const onChange = (e : any)=>{
-        const {name , value} = e.target
-        setUser((prev : any)=>({
+    const onChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
+        const {name , value} = e.target as HTMLInputElement | HTMLTextAreaElement;
+        setUser((prev : user)=>({
             ...prev ,
-            [name] : {...prev[name] , error : '', value : value}
+            [name as keyof user] : {...prev[name as keyof user] , error : '', value : value}
         }))
     }
 
-    const onBlurChange = (e : any)=>{
+    const onBlurChange = (e : React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)=>{
         const {name  , value} = e.target
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         type UserKey = keyof typeof user;
         const key = name as UserKey;
         if(key == 'email' && (value == '' || !emailRegex.test(value))){
-              setUser((prev : any)=>({
+              setUser((prev : user)=>({
                 ...prev,
                  [key] : {...prev[key] , error : "enter a valid email"}
               }))
         }
         else if (user[key] && user[key].isRequired && value == ''){
-            setUser((prev : any)=>({
+            setUser((prev : user)=>({
                 ...prev,
                  [key] : {...prev[key] , error : `${key} can not be blank`}
               }))
         }
     }
 
-    const onSubmit = async(e : any)=>{
+    const onSubmit = async(e : React.FormEvent)=>{
         e.preventDefault();
-        let formStatus = isValidate(user)
+        const formStatus = isValidate(user)
         if(formStatus.status){
-                let model = {
+                const model = {
                     name : user.name.value,
                     email : user.email.value,
                     desc : user.desc.value
@@ -54,19 +55,19 @@ function Contact() {
                 },
                 body : JSON.stringify(model)
               })
-              .then((res : any)=>{
+              .then(()=>{
                   alert("form submitted successfully !!")
               })
-              .catch((error : any)=>{
+              .catch(()=>{
                  alert("Submission Failed")
               })
         }
         else{
             
-           setUser((prev : any)=>{
-               let updated = {...prev}
-               for(let key in formStatus.error){
-                updated[key].error = formStatus.error[key]
+           setUser((prev : user)=>{
+               const updated = {...prev}
+               for(const key in formStatus.error){
+                updated[key as keyof user].error = formStatus.error[key]
                }
                return updated
            })
@@ -76,10 +77,10 @@ function Contact() {
 
     return (
         <div className='w-[95vw] sm:w-[82vw] h-auto pl-6 mx-auto pt-8 py-16 sm:py-16 sm:pt-0 pb-16' id='contact'>
-            <h3 className='secHead sm:hidden text-2xl text-left mx-auto sm:ml-16 font-bold text-gray-300 pb-8'>Let's Connect</h3>
+            <h3 className='secHead sm:hidden text-2xl text-left mx-auto sm:ml-16 font-bold text-gray-300 pb-8'>Let&apos;s Connect</h3>
             <div className="section-heading">
                 <span className="line"></span>
-                <span className="content text-4xl text-left font-bold text-gray-300 pb-8">Let's Connect</span>
+                <span className="content text-4xl text-left font-bold text-gray-300 pb-8">Let&apos;s Connect</span>
                 <span className="line"></span>
             </div>
             <div className=' w-[100%] sm:w-auto flex items-center justify-center'>
@@ -96,7 +97,7 @@ function Contact() {
                     </label>
                     <label htmlFor='msg' className='text-gray-400 w-[95%] sm:w-[82%] flex flex-col'>
                         <span>Message</span>
-                        <textarea  id='msg' name = {user.desc.name} value={user.desc.value} rows={8} className=" w-[100%]  outline-none  bg-transparent border  border-green-500 rounded-md px-8 py-2 bg-none" onChange={(e) => onChange(e)} onBlur={onBlurChange}/>
+                        <textarea  id='msg' name = {user.desc.name} value={user.desc.value} rows={8} className=" w-[100%]  outline-none  bg-transparent border  border-green-500 rounded-md px-8 py-2 bg-none" onChange={ (e)=>onChange(e)} onBlur={onBlurChange}/>
                         <span className='text-xs text-red-600'>{user.desc.error ? user.desc.error : ''}</span>
                     </label>
                     <div className='w-[80%] text-left'>

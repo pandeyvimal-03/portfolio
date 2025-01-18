@@ -1,7 +1,8 @@
+"use client"
 import React from 'react'
 
 function Expe() {
-  let exp = [
+  const exp = [
     {
       comp: "Value Innovation Labs",
       role: "Fullstack Developer",
@@ -23,7 +24,7 @@ function Expe() {
         {
           exp.map((item, index) => {
             return (
-              <div className='step '>
+              <div className='step ' key={index}>
                 <div className='circle'>{index + 1}</div>
                 <div className='content text-white'>
                   <h2 className='text-3xl font-bold'>{item?.comp}</h2>

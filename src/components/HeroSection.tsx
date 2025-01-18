@@ -7,13 +7,8 @@ import { Document, Page } from "react-pdf";
 import  "../assets/css/herosec.css"
 import {
     Dialog,
-    DialogPortal,
-    DialogOverlay,
-    DialogTrigger,
     DialogClose,
     DialogContent,
-    DialogHeader,
-    DialogFooter,
     DialogTitle,
     DialogDescription,
 } from '@/components/ui/dialog'

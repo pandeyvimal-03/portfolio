@@ -1,6 +1,5 @@
 "use client"
-import React , {useRef} from "react"
-import Image from "next/image";
+import React  from "react"
 import { pdfjs } from "react-pdf";
 import HeroSection from "@/components/HeroSection";
 import Header from "@/components/Header";

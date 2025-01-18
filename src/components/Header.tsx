@@ -1,9 +1,10 @@
+"use client"
 import React from 'react'
 import Link from 'next/link'
 
 function Header() {
-   let handlescroll = (id : any)=>{
-      let section = document.getElementById(id)
+   const handlescroll = (id : string)=>{
+      const section = document.getElementById(id)
       if(section){
          section.scrollIntoView({behavior : 'smooth' , block : 'start'})
       }
