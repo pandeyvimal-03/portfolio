@@ -28,7 +28,7 @@ function Certification() {
   ];
 
   return (
-    <div className='w-[95vw] sm:w-[80vw] h-auto sm:h-[90vh] pl-6 sm:pl-8 mx-auto  pt-8 pb-4 '>
+    <div className='w-[95vw] sm:w-[80vw] h-auto sm:h-[90vh] pl-6 sm:pl-8 mx-auto  pt-8 pb-4 ' id="certification">
       {/* <h3 className='secHead text-4xl text-center ml-16  font-bold text-gray-300 pb-12'>Certifications</h3> */}
       <h3 className='secHead text-2xl text-center mx-auto ml-0 sm:ml-16  font-bold text-gray-200 pb-12'>Certifications</h3>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">

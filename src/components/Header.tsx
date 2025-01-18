@@ -1,7 +1,13 @@
 import React from 'react'
 import Link from 'next/link'
 
-function Header({handlescroll} : any) {
+function Header() {
+   let handlescroll = (id : any)=>{
+      let section = document.getElementById(id)
+      if(section){
+         section.scrollIntoView({behavior : 'smooth' , block : 'start'})
+      }
+   }
   return (
     <div className=' flex items-center justify-between  px-12 py-8  text-gray-500'>
        <div className=' hidden sm:flex items-center justify-center mr-18 pr-12 w-[60%]'>
@@ -12,6 +18,7 @@ function Header({handlescroll} : any) {
              <li className='px-4 py-2 list-none font-bold text-md mr-3 cursor-pointer' onClick={()=>{handlescroll('skills')}}>Skills</li>
              <li className='px-4 py-2 list-none font-bold text-md mr-3 cursor-pointer' onClick={()=>{handlescroll('projects')}}>Projects</li>
              <li className='px-4 py-2 list-none font-bold text-md mr-3 cursor-pointer' onClick={()=>{handlescroll('edu')}}>Edu.</li>
+             <li className='px-4 py-2 list-none font-bold text-md mr-3 cursor-pointer' onClick={()=>{handlescroll('certification')}}>Certification</li>
              <li className='px-4 py-2 list-none font-bold text-md mr-3 cursor-pointer' onClick={()=>{handlescroll('contact')}}>Connect</li>
           </ul>
        </div>

@@ -28,7 +28,7 @@ function HeroSection() {
     };
 
     return (
-        <div className='herosec h-[60vh] sm:h-[80vh] w-[95vw] sm:w-[100%]  flex items-center justify-around '>
+        <div className='herosec h-[60vh] sm:h-[80vh] w-[95vw] sm:w-[100%]  flex items-center justify-around ' id='about'>
             <div className=''>
                 <div>
                     <h2 className='text-center sm:text-left font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white'>Hey, I'm Vimal Pandey </h2>
@@ -62,7 +62,7 @@ function HeroSection() {
 
             {/* Dialgo section */}
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                <DialogContent className="bg-[#0b131a] text-white sm:p-6 rounded-md shadow-lg border border-green-700 max-w-[95vw] sm:max-w-[550px] h-[60vh] sm:max-h-[90vh] ">
+                <DialogContent className="bg-[#0b131a] text-white sm:p-6 rounded-md shadow-lg border border-green-700 max-w-[95vw] sm:max-w-[550px] h-[60vh] sm:h-[90vh] ">
                     <DialogTitle className="text-2xl font-bold">My Resume</DialogTitle>
                     <DialogDescription className="mt-2 text-gray-300">
                         Here's a preview of my resume. You can download it for more details!

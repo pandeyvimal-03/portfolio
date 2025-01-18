@@ -17,7 +17,7 @@ function Expe() {
     }
   ]
   return (
-    <div className='w-[95vw] sm:w-[80vw] h-auto sm:h-[80vh] pl-6 mx-auto  py-8 '>
+    <div className='w-[95vw] sm:w-[80vw] h-auto sm:h-[80vh] pl-6 mx-auto  py-8 ' id='exp'>
       <h3 className='secHead text-2xl text-center sm:ml-0 mx-auto sm:mx-0 font-bold text-gray-200 pb-12'>Experience</h3>
       <div className=' expSec w-[90%]  sm:mx-auto'>
         {

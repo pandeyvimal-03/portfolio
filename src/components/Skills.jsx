@@ -7,7 +7,7 @@ function Skills() {
     let skillAr2 = ["Docker", "AWS", "MongoDB", "SQL", "PostgreSQL", "MySQL", "Express", "BullMQ", "Nginx", "Linux", "AWS S3", "Jenkins", "CI/CD", "Docker", "AWS", "MongoDB", "SQL", "PostgreSQL", "MySQL", "Express", "BullMQ", "Nginx", "Linux", "AWS S3", "Jenkins", "CI/CD"]
 
     return (
-        <div className='w-[95vw] sm:w-[82vw] h-auto pl-6 mx-auto  sm:py-20  mt-8 '>
+        <div className='w-[95vw] sm:w-[82vw] h-auto pl-6 mx-auto  sm:py-20  mt-8 ' id='skills'>
             <div className="section-heading ">
                 <span className="line"></span>
                 <span className="content text-4xl text-left font-bold text-gray-300 pb-8">Skills</span>
