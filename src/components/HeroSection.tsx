@@ -57,7 +57,7 @@ function HeroSection() {
 
             {/* Dialgo section */}
             <Dialog open={isOpen} onOpenChange={setIsOpen}>
-                <DialogContent className="bg-[#0b131a] text-white sm:p-6 rounded-md shadow-lg border border-green-700 max-w-[95vw] sm:max-w-[550px] h-[60vh] sm:h-[90vh] ">
+                <DialogContent className="DialogContent bg-[#0b131a] text-white sm:p-6 rounded-md shadow-lg border border-green-700 max-w-[95vw] sm:max-w-[550px] h-[60vh] sm:h-[90vh] ">
                     <DialogTitle className="text-2xl font-bold">My Resume</DialogTitle>
                     <DialogDescription className="mt-2 text-gray-300">
                         Here's a preview of my resume. You can download it for more details!
@@ -73,7 +73,7 @@ function HeroSection() {
                                 renderTextLayer={false}
                                 renderAnnotationLayer={false}
                                 className="w-auto max-h-[55vh] object-contain overflow-auto"
-                                scale={0.8}
+                                scale={0.5}
                             />
 
                         </Document>
