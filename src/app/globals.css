@@ -10,14 +10,8 @@ body {
   background-color: #0b131a;
 }
 
-/* .expSec {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
-  position: relative;
 
-} */
+
 
 @media screen and (max-width : 640px){
   .expSec{
@@ -38,18 +32,32 @@ body {
   align-items: flex-start;
 }
 
+.secIcon{
+  text-align: center;
+  position: absolute;
+  left: -20px; /* Position circle correctly relative to the step */
+  top: -18px;
+  height: 40px;
+  width: 40px;
+  background-color: green;
+  color: white;
+  padding: 4px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+}
 .circle {
   text-align: center;
   position: absolute;
   left: -17px; /* Position circle correctly relative to the step */
   top: 40px;
-  height: 30px;
-  width: 30px;
+  height: 35px;
+  width: 35px;
   background-color: green;
   color: white;
   padding: 4px;
   border-radius: 50%;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
 }
 

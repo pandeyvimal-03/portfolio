@@ -1,5 +1,7 @@
 "use client"
 import React, { useState } from 'react'
+import {motion} from 'framer-motion'
+import { leftAnimation , rightAnimation } from '@/assets/variants/variants'
 import Image from 'next/image'
 import PImage from "../assets/images/portfolio_v_image_m.png"
 import { Typewriter } from 'react-simple-typewriter'
@@ -22,9 +24,16 @@ function HeroSection() {
         setNumPages(numPages);
     };
 
+   
+
     return (
         <div className='herosec h-[60vh] sm:h-[80vh] w-[95vw] sm:w-[100%]  flex items-center justify-around ' id='about'>
-            <div className=''>
+            <motion.div 
+                variants={leftAnimation}
+                initial="hidden"
+                animate="show"
+               className=''
+            >
                 <div>
                     <h2 className='text-center sm:text-left font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-white'>Hey, I'm Vimal Pandey </h2>
                     <h3 className='text-center sm:text-left text-2xl font-extrabold sm:text-3xl text-green-500'>I'm a
@@ -50,10 +59,15 @@ function HeroSection() {
                         </button>
                     </a>
                 </div>
-            </div>
-            <div className=''>
+            </motion.div>
+            <motion.div
+               variants={rightAnimation}
+               initial="hidden"
+               animate="show" 
+               className=''
+            >
                 <Image src={PImage} alt="" className='h-[270px] w-[270px] rounded-full border-green-500 border-2 mx-auto shadow-[0_0_20px_rgba(34,197,94,0.8)]' />
-            </div>
+            </motion.div>
 
             {/* Dialgo section */}
             <Dialog open={isOpen} onOpenChange={setIsOpen}>

@@ -1,5 +1,7 @@
 "use client"
 import React from 'react'
+import { motion } from 'framer-motion'
+import { fadeUpVariant } from '@/assets/variants/variants'
 
 function Expe() {
   const exp = [
@@ -17,26 +19,42 @@ function Expe() {
 
     }
   ]
+
+ 
   return (
-    <div className='w-[100vw] sm:w-[80vw] h-auto sm:h-[80vh] pl-2 sm:pl-6 mx-auto  py-8 ' id='exp'>
+    <motion.div
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, amount: 0.5 }}
+      variants={fadeUpVariant}
+      className='w-[100vw] sm:w-[80vw] h-auto sm:h-[80vh] pl-2 sm:pl-6 mx-auto  py-8 '
+      id='exp'
+    >
       <h3 className='secHead text-2xl text-center sm:ml-0 mx-auto sm:mx-0 font-bold text-gray-200 pb-12'>Experience</h3>
       <div className=' expSec w-[90%]  sm:mx-auto'>
         {
           exp.map((item, index) => {
             return (
-              <div className='step ' key={index}>
+              <motion.div
+                className='step '
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+              >
                 <div className='circle'>{index + 1}</div>
                 <div className='content text-white'>
                   <h2 className='text-3xl font-bold'>{item?.comp}</h2>
                   <h3 className='text-sm font-bold text-gray-300'>{item.role}&nbsp;&nbsp;&nbsp;<span className='text-gray-400'>{item.duration}</span> </h3>
                   <p className='text-gray-400'>{item?.desc}</p>
                 </div>
-              </div>
+              </motion.div>
             )
           })
         }
       </div>
-    </div>
+    </motion.div>
   )
 }
 
