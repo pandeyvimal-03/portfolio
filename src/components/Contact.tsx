@@ -76,7 +76,7 @@ function Contact() {
     }
 
     return (
-        <div className='w-[95vw] sm:w-[82vw] h-auto pl-6 mx-auto pt-8 py-16 sm:py-16 sm:pt-0 pb-16' id='contact'>
+        <div className='w-[100vw] sm:w-[82vw] h-auto pl-6 mx-auto pt-8 py-16 sm:py-16 sm:pt-0 pb-16' id='contact'>
             <h3 className='secHead sm:hidden text-2xl text-left mx-auto sm:ml-16 font-bold text-gray-300 pb-8'>Let&apos;s Connect</h3>
             <div className="section-heading">
                 <span className="line"></span>

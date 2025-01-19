@@ -17,7 +17,7 @@ function Education() {
     }
   ]
   return (
-    <div className='w-[95vw] sm:w-[80vw] h-auto sm:h-[80vh] pl-6 mx-auto  py-8' id='edu'>
+    <div className='w-[100vw] sm:w-[80vw] h-auto sm:h-[80vh] pl-6 mx-auto  py-8' id='edu'>
         <div className="section-heading">
                 <span className="line"></span>
                 <span className="content text-4xl text-left font-bold text-gray-300 pb-8">Educational Qualification</span>

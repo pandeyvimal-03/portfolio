@@ -73,7 +73,7 @@ function HeroSection() {
                                 renderTextLayer={false}
                                 renderAnnotationLayer={false}
                                 className="w-auto max-h-[55vh] object-contain overflow-auto"
-                                scale={0.5}
+                                scale={0.8}
                             />
 
                         </Document>

@@ -43,7 +43,7 @@ const project = [
 
 function Projects() {
   return (
-    <div className=' w-[95vw] sm:w-[82vw] h-auto pl-6 sm:pl-6 mx-auto  py-8 sm:py-24 ' id='projects'>
+    <div className=' w-[100vw] sm:w-[82vw] h-auto pl-6 sm:pl-6 mx-auto  py-8 sm:py-24 ' id='projects'>
       
       {/* <h3 className='secHead text-4xl text-left font-bold mr-auto ml-16 text-gray-300 pb-8'>Projects</h3> */}
       <h3 className='secHead text-2xl text-center pl sm:ml-16  font-bold text-gray-200 pb-12'>Projects</h3>
