@@ -43,7 +43,7 @@ const project = [
 
 function Projects() {
   return (
-    <div className=' w-[100vw] sm:w-[82vw] h-auto pl-6 sm:pl-6 mx-auto  py-8 sm:py-24 ' id='projects'>
+    <div className=' w-[100vw] sm:w-[82vw] h-auto pl-2 sm:pl-6 mx-auto  py-8 sm:py-24 ' id='projects'>
       
       {/* <h3 className='secHead text-4xl text-left font-bold mr-auto ml-16 text-gray-300 pb-8'>Projects</h3> */}
       <h3 className='secHead text-2xl text-center pl sm:ml-16  font-bold text-gray-200 pb-12'>Projects</h3>
@@ -58,7 +58,7 @@ function Projects() {
                   <p className='text-gray-400 text-sm'>{item.desc1}</p>
                   <br/>
                   <p className='text-gray-400 text-sm'>{item.desc2}</p>
-                  <button className='w-[30%] px-4 py-2 rounded-md bg-green-700 text-white mt-2'>visit</button>
+                  <button className='w-[40%] sm:w-[30%] px-4 py-2 rounded-md bg-green-700 text-white mt-2'>visit</button>
               </div>
             </div>
             )

@@ -76,14 +76,14 @@ function Contact() {
     }
 
     return (
-        <div className='w-[100vw] sm:w-[82vw] h-auto pl-6 mx-auto pt-8 py-16 sm:py-16 sm:pt-0 pb-16' id='contact'>
+        <div className='w-[100vw] sm:w-[82vw] h-auto pl-2 sm:pl-6 mx-auto pt-8 py-16 sm:py-16 sm:pt-0 pb-16' id='contact'>
             <h3 className='secHead sm:hidden text-2xl text-left mx-auto sm:ml-16 font-bold text-gray-300 pb-8'>Let&apos;s Connect</h3>
             <div className="section-heading">
                 <span className="line"></span>
                 <span className="content text-4xl text-left font-bold text-gray-300 pb-8">Let&apos;s Connect</span>
                 <span className="line"></span>
             </div>
-            <div className=' w-[100%] sm:w-auto flex items-center justify-center'>
+            <div className=' w-[95%] sm:w-auto flex items-center justify-center'>
                 <form action="" className='sm:px-4 py-2 w-[100%] sm:w-[80%]  flex flex-col sm:flex-row flex-wrap gap-4 items-center justify-center' onSubmit={(e)=>onSubmit(e)}>
                     <label htmlFor='name' className='text-gray-400 w-[95%] sm:w-[40%] flex flex-col flex-wrap'>
                         <span>Name</span>
